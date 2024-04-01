@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  showSearch: boolean = false;
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
+  }
 
 }
