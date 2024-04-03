@@ -1,26 +1,14 @@
 <header class="text-white">
-    <section class="h-9 bg-[#242424] flex items-center justify-end pl-20 pr-20">
-        <ul class="flex gap-5">
-            @if(showSearch)
-            {
-                <li>
-                    <input placeholder="search ..." class="text-center pb-1 h-[90%] rounded-lg ">
-                </li>
-            }
-            <li>
-                <a>
-                    <img src="/assets/search.png" class="h-6 cursor-pointer" (click)="toggleSearch()">
-                </a>
-            </li>
-            <li>
-                <a>
-                    <img src="/assets/shop.png" class="h-6 cursor-pointer">
-                </a>
-            </li>
-        </ul>
+    <section class="h-9 bg-[#242424] flex items-center justify-end pl-20 pr-20 fixed w-full z-20">
+        <app-top-bar/>
     </section>
-    <section>
-        <a></a>
-        <ul></ul>
+    <section class="flex justify-between items-center h-32 bg-[#333333] pl-[10%] pr-[10%] pt-9">
+        <img src="/assets/logo.png" routerLink="" class="h-[60%] cursor-pointer">
+        <ul class="flex gap-16 text-xl">
+            <li routerLink="/category/men's clothing" class="cursor-pointer hover:text-[#E4901B]">men's clothing</li>
+            <li routerLink="/category/jewelery" class="cursor-pointer hover:text-[#E4901B]">jewelery</li>
+            <li routerLink="/category/electronics" class="cursor-pointer hover:text-[#E4901B]">electronics</li>
+            <li routerLink="/category/women's clothing" class="cursor-pointer hover:text-[#E4901B]">women's clothing</li>
+        </ul>
     </section>
 </header>
