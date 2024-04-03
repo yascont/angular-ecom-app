@@ -2,3 +2,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: bo;
+    src: url(assets/fonts/Oswald-Bold.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: exl;
+    src: url(assets/fonts/Oswald-ExtraLight.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: li;
+    src: url(assets/fonts/Oswald-Light.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: me;
+    src: url(assets/fonts/Oswald-Medium.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: re;
+    src: url(assets/fonts/Oswald-Regular.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: seb;
+    src: url(assets/fonts/Oswald-SemiBold.ttf) format("opentype");
+  }
+
+
+*{
+    font-family: 're';
+}
+
+
+.bo{
+    font-family: 'bo';
+}
+
+.li{
+    font-family: 'li';
+}
+
+.seb{
+  font-family: 'seb';
+}
+
+@keyframes fadeIn {
+    0% { margin-bottom: 400px; }
+    100% { margin-bottom: 0; }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn2 {
+    0% { margin-right: 100px; }
+    100% { margin-right: 0; }
+}
+
+.fadeIn2 {
+    animation: fadeIn2 1s ease-in;
+}
+
+

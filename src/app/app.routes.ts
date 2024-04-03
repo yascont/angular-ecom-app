@@ -9,7 +9,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' }, 
     { path: 'home', component: HomePageComponent },
     { path: 'product/:id', component:ProductPageComponent },
-    { path: 'category/:id', component:CategoryPageComponent },
+    { path: 'category/:category', component:CategoryPageComponent },
     { path: 'cart', component:CartPageComponent },
     { path: '404', component:NoFoundPageComponent },
     { path: '**', redirectTo: '/404'}                  

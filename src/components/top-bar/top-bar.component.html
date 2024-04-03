@@ -1,0 +1,20 @@
+<section class="h-9 bg-[#242424] flex items-center justify-end pl-20 pr-20 z-20">
+    <ul class="flex gap-5">
+        @if(showSearch)
+        {
+            <li>
+                <input placeholder="search ..." class="text-center pb-1 h-[90%] rounded-lg ">
+            </li>
+        }
+        <li>
+            <a>
+                <img src="/assets/search.png" class="h-6 cursor-pointer" (click)="toggleSearch()">
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="/assets/shop.png" routerLink="cart" class="h-6 cursor-pointer">
+            </a>
+        </li>
+    </ul>
+</section>
