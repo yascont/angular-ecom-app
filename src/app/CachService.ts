@@ -7,8 +7,10 @@ export class CacheService {
 
   constructor() {}
 
+  len = localStorage.length
   set(key: string, data: any): void {
     localStorage.setItem(key, JSON.stringify(data));
+    this.len = localStorage.length
   }
 
   get(key: string): any {
@@ -37,9 +39,12 @@ export class CacheService {
 
   remove(key: string): void {
     localStorage.removeItem(key);
+    this.len = localStorage.length
   }
 
   clear(): void {
     localStorage.clear();
+    this.len = localStorage.length
   }
+
 }

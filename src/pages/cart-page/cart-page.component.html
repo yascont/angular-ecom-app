@@ -1,7 +1,7 @@
 <section class="bg-[#d1d7da] pb-10">
     <section class="ml-[7%] pt-10">
         <h2 class="bo text-[26px]">Shopping Bag</h2>
-        <p><span class="bo">2 items</span> in your bag</p>
+        <p><span class="bo">{{cacheService.len}} items</span> in your bag</p>
     </section>
 
     
@@ -16,7 +16,7 @@
         {
             <cartProduct [key]="key"/>
         }
-        <p routerLink="/" class="mt-8 hover:animate-pulse bg-[#E4901B] h-10 w-36 flex items-center justify-center ml-auto cursor-pointer">CHECKOUT</p>
+        <p routerLink="/home" (click)="deleteAll()" class=" mt-8 hover:animate-pulse bg-[#E4901B] h-10 w-36 flex items-center justify-center ml-auto cursor-pointer">CHECKOUT</p>
     </section>
 
 </section>

@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CategoryCardsComponent } from '../../components/category-cards/category-cards.component';
 import { fetchProducts } from '../../app/fetshProductsService';
 import { ActivatedRoute } from '@angular/router';
 import { inject } from '@angular/core';
-
+import { CacheService } from '../../app/CachService';
 
 
 interface Product {
@@ -17,6 +17,7 @@ interface Product {
     rate?: number;
     count?: number;
   };
+  count? :number
 }
 
 
@@ -28,8 +29,11 @@ interface Product {
   styleUrl: './product-page.component.css'
 })
 export class ProductPageComponent {
+  @ViewChild('count') count!: ElementRef;
+
   private activatedRoute = inject(ActivatedRoute);
   private fetch = inject(fetchProducts)
+  private cache = inject(CacheService)
   
   product : Product = {};
   id: string = '';
@@ -44,6 +48,15 @@ export class ProductPageComponent {
   fetchProducts() {
       this.fetch.getSpeceficProducts(parseInt(this.id)).subscribe((prod: Product) =>
          this.product = prod);
+  }
+
+  handleNewElem()
+  {
+    console.log("test")
+    const count = this.count.nativeElement.value;
+    this.product.count = parseInt(count)
+    if(this.product && this.product.id)
+      this.cache.set((this.product.id).toString(), this.product)
   }
 }
 
