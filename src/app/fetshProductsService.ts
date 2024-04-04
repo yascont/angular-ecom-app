@@ -1,6 +1,5 @@
-import { Injectable, inject } from "@angular/core";
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs";
 
 interface Product {

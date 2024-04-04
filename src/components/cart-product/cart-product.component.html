@@ -1,43 +1,27 @@
-<section class="flex w-70% justify-between mb-8 items-center shadow-lg shadow-xl p-10">
+<section class="flex justify-between mb-8 items-center shadow-lg shadow-xl p-10">
  
-<div class="flex w-[21%] gap-5">
-    <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" class="max-h-40 rounded-xl">
-    <div class="">
-        <p class="text-[#B2B3B6] text-sm">Women</p>
-        <h2 class="seb text-lg">title as you see here</h2>
-    </div>
+<div class="flex w-[0%] gap-5">
+    <img src="{{ product.image }}" class="max-h-40 max-w-32 rounded-xl">
+</div>
+<div class="w-[10%]">
+    <p class="text-[#B2B3B6] text-sm">{{ product.category }}</p>
+    <h2 class="seb text-lg">{{ product.title }}</h2>
 </div>
 
-<p class="w-[15%] bo">$20.50</p>
+<p class="w-[15%] bo">${{ product.price }}</p>
 
 <div class="w-[16%] h-10 flex gap-4">
-    <p class=" text-lg">-</p>
-    <p class=" li text-lg">2</p>
-    <p class=" text-lg">+</p>
+    @if(product.count > 0)
+    {
+        <p class=" text-lg cursor-pointer" (click)="handleMinus()">-</p>
+        <p class=" li text-lg">{{ product.count }}</p>
+        <p class=" text-lg cursor-pointer" (click)="handlePlus()">+</p>
+    }
+    @else(){
+        <p class="text-lg text-red-600">removed</p>
+    }
+    
 </div>
 
-<p class="w-[6%] text-[#FFC770] bo text-2xl">$41.00</p>
+<p class="w-[6%] text-[#FFC770] bo text-2xl">${{ (product.price * product.count).toFixed(2) }}</p>
 </section>
-
-
-<section class="flex w-70% justify-between mb-8 items-center shadow-lg shadow-xl p-10">
- 
-    <div class="flex w-[21%] gap-5">
-        <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" class="max-h-40 rounded-xl">
-        <div class="">
-            <p class="text-[#B2B3B6] text-sm">Women</p>
-            <h2 class="seb text-lg">title as you see here</h2>
-        </div>
-    </div>
-    
-    <p class="w-[15%] bo">$20.50</p>
-    
-    <div class="w-[16%] h-10 flex gap-4">
-        <p class=" text-lg">-</p>
-        <p class=" li text-lg">2</p>
-        <p class=" text-lg">+</p>
-    </div>
-    
-    <p class="w-[6%] text-[#FFC770] bo text-2xl">$41.00</p>
-    </section>
-
