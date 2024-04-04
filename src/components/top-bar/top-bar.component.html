@@ -3,7 +3,7 @@
         @if(showSearch)
         {
             <li>
-                <input placeholder="search ..." class="text-center pb-1 h-[90%] rounded-lg ">
+                <input placeholder="type your category..." class="text-center text-black pb-1 h-[90%] rounded-lg" (keyup.enter)="onEnter()"(keyup)="onKey($event)">
             </li>
         }
         <li>

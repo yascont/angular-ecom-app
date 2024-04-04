@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CacheService } from '../../app/CachService';
 
 @Component({
@@ -11,9 +11,20 @@ import { CacheService } from '../../app/CachService';
 })
 export class TopBarComponent {
 
+  router: Router = inject(Router)
   CacheServ:CacheService = inject(CacheService)
   showSearch: boolean = false;
 
+  search = '';
+
+  onKey(event: any) {
+    this.search = event.target.value;
+  }
+
+  onEnter()
+  {
+    this.router.navigate([`/category/${this.search}`]);
+  }
   
   toggleSearch() {
     this.showSearch = !this.showSearch;
