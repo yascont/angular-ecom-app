@@ -1,0 +1,17 @@
+<section class="pl-[10%] pr-[10%] flex gap-10 flex-wrap justify-center mt-5">
+  
+@for(product of products; track product.id)
+{
+    <app-card
+    [img]="product.image"
+    [title]="product.title"
+    [price]="product.price"
+    [id]="product.id"
+    [category]="product.category"
+    [description]="product.description"
+    >
+  </app-card>
+}
+
+
+</section>

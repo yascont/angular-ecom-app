@@ -1,0 +1,27 @@
+<section class="flex justify-between mb-8 items-center shadow-lg shadow-xl p-10">
+ 
+<div class="flex w-[0%] gap-5">
+    <img src="{{ product.image }}" class="max-h-40 max-w-32 rounded-xl">
+</div>
+<div class="w-[10%]">
+    <p class="text-[#B2B3B6] text-sm">{{ product.category }}</p>
+    <h2 class="seb text-lg">{{ product.title }}</h2>
+</div>
+
+<p class="w-[15%] bo">${{ product.price }}</p>
+
+<div class="w-[16%] h-10 flex gap-4">
+    @if(product.count > 0)
+    {
+        <p class=" text-lg cursor-pointer" (click)="handleMinus()">-</p>
+        <p class=" li text-lg">{{ product.count }}</p>
+        <p class=" text-lg cursor-pointer" (click)="handlePlus()">+</p>
+    }
+    @else(){
+        <p class="text-lg text-red-600">removed</p>
+    }
+    
+</div>
+
+<p class="w-[6%] text-[#FFC770] bo text-2xl">${{ (product.price * product.count).toFixed(2) }}</p>
+</section>
